@@ -1,0 +1,22 @@
+{
+    "name": "Simple Adblocker",
+    "version": "1.0",
+    "description": "This extension can be used to block ads.",
+    "permissions": ["webRequest", "webRequestBlocking", "activeTab", "<all_urls>"], 
+    "background": {
+      "service_worker": "service.js"
+    },
+    "action":{
+      "default_popup":"popup.html"
+    },
+    "icons": {
+      "128": "icon1.png"
+    },
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["content.js"]
+        }
+      ],
+    "manifest_version":3
+}
